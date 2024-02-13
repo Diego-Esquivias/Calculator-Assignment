@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+<body>
+    <div id="Base">
+        <input type="text" id="textarea" readonly>
+        <button id="7" type="button" class="button" onclick="seven()">7</button>
+        <button id="8" type="button" class="button" onclick="eight()">8</button>
+        <button id="9" type="button" class="button" onclick="nine()">9</button>
+        <button id="√" type="button" class="operators" onclick="sqrt()">√</button>
+
+        <button id="4" type="button" class="button" onclick="four()">4</button>
+        <button id="5" type="button" class="button" onclick="five()">5</button>
+        <button id="6" type="button" class="button" onclick="six()">6</button>
+        <button id="^" type="button" class="operators" onclick="exp()">^</button>
+
+        <button id="1" type="button" class="button" onclick="one()">1</button>
+        <button id="2" type="button" class="button" onclick="two()">2</button>
+        <button id="3" type="button" class="button" onclick="three()">3</button>
+        <button id="sin" type="button" class="operators" onclick="sin()">Sin</button>
+
+        <button id="+" type="button" class="operators" onclick="add()">+</button>
+        <button id="0" type="button" class="button" onclick="zero()">0</button>
+        <button id="-" type="button" class="operators" onclick="sub()">-</button>
+        <button id="cos" type="button" class="operators" onclick="cos()">Cos</button>
+
+        <button id="*" type="button" class="operators" onclick="multi()">*</button>
+        <button id="/" type="button" class="operators" onclick="div()">/</button>
+        <button id="e" type="button" class="operators" onclick="natLog()">e</button>
+        <button id="tan" type="button" class="operators" onclick="tan()">Tan</button>
+
+        <button id="log" type="button" class="operators" onclick="log()">log</button>
+        <button id="del" type="button" class="operators" onclick="del()">Del</button>
+        <button id="clear" type="button" class="operators" onclick="clr()">Clear</button>
+        <button id="=" type="button" class="operators" onclick="equal()">=</button>
+    </div>
+
+    <script src="Calculator.js"></script>
+</body>
+</html>
