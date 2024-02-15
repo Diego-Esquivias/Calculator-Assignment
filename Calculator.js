@@ -1,76 +1,105 @@
+// Creates empty variables that will be used later
+
 var solution = ""
 var equation = ""
-// Lines 3-5 add text to the calculator when a button is clicked
+// Adds text to the calculator when a button is clicked
 
 const addText = (text) => {
     document.getElementById("textarea").value += text
 }
 
-// Lines 9-10 delete one character from the input tag
+// Deletes one character from the input tag
 
 const del = () => {
-    let x = document.getElementById("textarea").value
-    x = x.substring(0, x.length-1)
-    document.getElementById("textarea").value = x
+    let char = document.getElementById("textarea").value
+    char = char.substring(0, char.length-1)
+    document.getElementById("textarea").value = char
 }
 
-// Lines 17-20 clear everything from the input tag
+// Clears everything from the input tag
 
 const clr = () => {
     document.getElementById("textarea").value = ""
 }
 
-const sin = (text) => {
-    document.getElementById("textarea").value += text
+// Returns the sine of the last number given
+
+const sin = () => {
     equation = document.getElementById("textarea").value
     equation = equation.split(" ")
-    solution = Math.sin(Number(equation[0]))
-    document.getElementById("textarea").value = solution
+    solution = Math.sin(Number(equation[equation.length - 1]))
+    equation.pop()
+    equation.push(solution)
+    document.getElementById("textarea").value = equation.join(" ")
 }
 
-const cos = (text) => {
-    document.getElementById("textarea").value += text
+// Returns the cosine of the last number given
+
+const cos = () => {
     equation = document.getElementById("textarea").value
     equation = equation.split(" ")
-    solution = Math.cos(Number(equation[0]))
-    document.getElementById("textarea").value = solution
+    solution = Math.cos(Number(equation[equation.length - 1]))
+    equation.pop()
+    equation.push(solution)
+    document.getElementById("textarea").value = equation.join(" ")
 }
 
-const tan = (text) => {
-    document.getElementById("textarea").value += text
+// Returns the tan of the last number given
+
+const tan = () => {
     equation = document.getElementById("textarea").value
     equation = equation.split(" ")
-    solution = Math.tan(Number(equation[0]))
-    document.getElementById("textarea").value = solution
+    solution = Math.tan(Number(equation[equation.length - 1]))
+    equation.pop()
+    equation.push(solution)
+    document.getElementById("textarea").value = equation.join(" ")
 }
 
-const log = (text) => {
-    document.getElementById("textarea").value += text
+// Returns the log of the last number given
+
+const log = () => {
     equation = document.getElementById("textarea").value
     equation = equation.split(" ")
-    solution = Math.log10(Number(equation[0]))
-    document.getElementById("textarea").value = solution
+    solution = Math.log10(Number(equation[equation.length - 1]))
+    equation.pop()
+    equation.push(solution)
+    document.getElementById("textarea").value = equation.join(" ")
 }
 
-const ln = (text) => {
-    document.getElementById("textarea").value += text
+// Returns the natural log of the last number given
+
+const ln = () => {
     equation = document.getElementById("textarea").value
     equation = equation.split(" ")
-    solution = Math.log(Number(equation[0]))
-    document.getElementById("textarea").value = solution
+    solution = Math.log(Number(equation[equation.length - 1]))
+    equation.pop()
+    equation.push(solution)
+    document.getElementById("textarea").value = equation.join(" ")
 }
 
-const sqrt = (text) => {
-    document.getElementById("textarea").value += text
+// Returns the square root of the last number given
+
+const sqrt = () => {
     equation = document.getElementById("textarea").value
     equation = equation.split(" ")
-    solution = Math.sqrt(Number(equation[0]))
-    document.getElementById("textarea").value = solution
+    solution = Math.sqrt(Number(equation[equation.length - 1]))
+    equation.pop()
+    equation.push(solution)
+    document.getElementById("textarea").value = equation.join(" ")
 }
+
+// Returns the solution to basic arithmetic operations
 
 const equal = () => {
         solution = document.getElementById("textarea").value
-        solution = eval(solution)
-        document.getElementById("textarea").value = solution
+
+        // Trys to eval the equation and if it errors change the textarea to 'Error' otherwise display the solution
+        
+        try {
+            solution = eval(solution)
+            document.getElementById("textarea").value = solution
+        } catch (error) {
+            document.getElementById("textarea").value = "Error"
+        }
 }
 
